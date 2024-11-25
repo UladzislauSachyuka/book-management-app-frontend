@@ -1,0 +1,13 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  row-gap: 40px;
+}
+
+.loginLink {
+  padding: 5px 10px;
+  border: 1px solid var(--gray-color);
+  border-radius: 5px;
+}
