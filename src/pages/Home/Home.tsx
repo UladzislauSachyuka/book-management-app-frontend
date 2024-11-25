@@ -78,59 +78,61 @@ const Home: React.FC = () => {
       <button onClick={() => navigate("/addBook")}>Add Book</button>
 
       <div className={styles.filtersContainer}>
-        <label>
+        <label htmlFor="status">
           Status:
-          <select
-            value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value)}
-          >
-            <option value="all">All</option>
-            <option value="read">Read</option>
-            <option value="not-read">Not Read</option>
-          </select>
         </label>
-
-        <label>
+        <select
+          id="status"
+          value={statusFilter}
+          onChange={(e) => setStatusFilter(e.target.value)}>
+          <option value="all">All</option>
+          <option value="read">Read</option>
+          <option value="not-read">Not Read</option>
+        </select>
+        
+        <label htmlFor="date">
           End Date:
-          <input
-            type="date"
-            value={endDateFilter}
-            onChange={(e) => setEndDateFilter(e.target.value)}
-          />
         </label>
-
-        <label>
+        <input
+          id="date"
+          type="date"
+          value={endDateFilter}
+          onChange={(e) => setEndDateFilter(e.target.value)}
+        />
+        
+        <label htmlFor="title">
           Title:
-          <input
-            type="text"
-            placeholder="Search by title"
-            value={titleFilter}
-            onChange={(e) => setTitleFilter(e.target.value)}
-          />
         </label>
-
-        <label>
+        <input
+          id="title"
+          type="text"
+          placeholder="Search by title"
+          value={titleFilter}
+          onChange={(e) => setTitleFilter(e.target.value)}
+        />
+        
+        <label htmlFor="dateSort">
           Sort By:
-          <select
-            value={sortField}
-            onChange={(e) => setSortField(e.target.value)}
-          >
-            <option value="">None</option>
-            <option value="startDate">Start Date</option>
-            <option value="endDate">End Date</option>
-          </select>
         </label>
+        <select
+          id="dateSort"
+          value={sortField}
+          onChange={(e) => setSortField(e.target.value)}>
+          <option value="">None</option>
+          <option value="startDate">Start Date</option>
+          <option value="endDate">End Date</option>
+        </select>
 
-        <label>
+        <label htmlFor="order">
           Order:
-          <select
-            value={sortOrder}
-            onChange={(e) => setSortOrder(e.target.value)}
-          >
-            <option value="asc">Ascending</option>
-            <option value="desc">Descending</option>
-          </select>
         </label>
+        <select
+          id="order"
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
       </div>
 
       {noData ? (
